@@ -17,7 +17,8 @@ public class Main {
             System.out.println("2. Update information");
             System.out.println("3. Add a patient");
             System.out.println("4. Delete a patient");
-            System.out.println("5. Quit");
+            System.out.println("5. Search");
+            System.out.println("6. Quit");
 
             int command = scanner.nextInt();
 
@@ -71,9 +72,15 @@ public class Main {
                 int patientId = scanner.nextInt();
                 preparedStatement.setInt(1, patientId);
                 preparedStatement.executeUpdate();
-            } else if (command == 5) {
-                System.exit(0);
-            } else {
+            } else if (command == 6) {
+                System.exit(0);}
+
+
+              else if (command == 5) {
+                int IIN=scanner.nextInt();
+                db.search_by_UIN(conn,"patients",IIN);
+            }
+              else {
                 System.err.println("Command not found");
             }
         }
