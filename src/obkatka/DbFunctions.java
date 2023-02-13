@@ -30,4 +30,27 @@ public class DbFunctions {
             System.out.println(e);
         }
     }
+    public void search_by_UIN(Connection conn,String table_name,int IIN){
+        Statement statement;
+        ResultSet rs=null;
+
+        try {
+            String query=String.format("select *  from %s where empid= %s",table_name,IIN);
+            statement=conn.createStatement();
+            rs=statement.executeQuery(query);
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM patients");
+            String name= resultSet.getString(2);
+            String surname=resultSet.getString(3);
+            int age=resultSet.getInt(4);
+            String address=resultSet.getString(5);
+            boolean insurance=resultSet.getBoolean(6);
+            float payment= resultSet.getFloat(7);
+            System.out.println(name+" "+surname+" "+age+" "+address+" "+insurance+" "+payment);
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+
+
 }

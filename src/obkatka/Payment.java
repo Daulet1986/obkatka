@@ -1,3 +1,5 @@
+package obkatka;
+
 public class Payment {
     private String doctor;
     private float price;
@@ -25,6 +27,7 @@ public class Payment {
     public void setInsurance(boolean insurance){this.insurance = insurance;}
 
     public boolean processPayment(float amount) {
+
         try {
             if (insurance == false) {
                 System.out.println("Insurance was not found. Processing payment...");
@@ -42,6 +45,7 @@ public class Payment {
         } catch (Exception e) {
             System.out.println("Error occurred while processing the payment. Try again later!");
         }
+        return true;
     }
 
 }
