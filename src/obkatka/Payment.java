@@ -6,9 +6,9 @@ public class Payment {
     private boolean insurance;
 
     public Payment(String doctor, float price, boolean insurance) {
-        this.doctor = doctor;
-        this.price = price;
-        this.insurance = insurance;
+        setDoctor(doctor);
+        setPrice(price);
+        setInsurance(insurance);
     }
 
     public float calculateTotal() {

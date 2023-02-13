@@ -1,6 +1,7 @@
 package obkatka;
 
 public class Appointment {
-    private Float amount;
-    private Boolean paidSuccessful;
+    Payment payment = new Payment();
+    private Float amount = payment.getPrice();
+    private Boolean paidSuccessful = payment.processPayment(amount);
 }
