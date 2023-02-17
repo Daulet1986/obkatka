@@ -4,7 +4,6 @@ public class Payment {
     private String doctor;
     private float price;
     private boolean insurance;
-
     public Payment(String doctor, float price, boolean insurance) {
         setDoctor(doctor);
         setPrice(price);
